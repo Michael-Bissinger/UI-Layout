@@ -11,6 +11,7 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
 /**
@@ -32,6 +33,10 @@ public class UILayout extends Application {
         });
         
         StackPane root = new StackPane();
+        
+        Circle cir = new Circle(150,125,70);
+        
+        root.getChildren().add(cir);
         root.getChildren().add(btn);
         
         Scene scene = new Scene(root, 300, 250);
