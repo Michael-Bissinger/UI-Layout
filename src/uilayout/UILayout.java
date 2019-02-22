@@ -19,6 +19,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 /**
@@ -43,6 +44,11 @@ public class UILayout extends Application {
         PasswordField pw = new PasswordField();
         
         
+        //Needed for Helbling File Renamer
+        FileChooser fc = new Filechooser();
+        fc.setTitle("Pick your file");
+        fc.showOpenDialog(primaryStage);
+        
         
         //Pick Layout
         GridPane grid = new GridPane();
@@ -59,7 +65,7 @@ public class UILayout extends Application {
         grid.add(cb,1,1);
         
         grid.add(pw,3,0);
-                
+        
         
         
         btn.setOnAction(new EventHandler<ActionEvent>() {
