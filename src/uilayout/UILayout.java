@@ -10,9 +10,11 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.shape.Circle;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.Hyperlink;
+import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
@@ -23,8 +25,23 @@ public class UILayout extends Application {
     
     @Override
     public void start(Stage primaryStage) {
+        
+        //Create the UI controls
         Button btn = new Button();
         btn.setText("Say 'Hello World'");
+        Label lbl = new Label("I'm a label");
+        TextField tf = new TextField("Enter text here");
+        Hyperlink hl = new Hyperlink("I'm a hyperlink");
+        RadioButton rb = new RadioButton("RadioButton");
+        rb.setStyle("-fx-base: #61a2b1");
+        CheckBox cb = new CheckBox();
+        
+        //Pick Layout
+        GridPane grid = new GridPane();
+        
+                
+        
+        
         btn.setOnAction(new EventHandler<ActionEvent>() {
             
             @Override
@@ -33,19 +50,14 @@ public class UILayout extends Application {
             }
         });
         
-        BorderPane root = new BorderPane();
-        
-        Circle cir = new Circle(150,125,70);
-        
-        root.setTop(btn);
-        root.setCenter(cir);
+
         
         //root.getChildren().add(cir);
         //root.getChildren().add(btn);
         
         Scene scene = new Scene(root, 300, 250);
         
-        primaryStage.setTitle("Hello World!");
+        primaryStage.setTitle("User controls!");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
