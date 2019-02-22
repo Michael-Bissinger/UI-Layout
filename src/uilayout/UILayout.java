@@ -8,6 +8,8 @@ package uilayout;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -15,6 +17,7 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 /**
@@ -38,6 +41,18 @@ public class UILayout extends Application {
         
         //Pick Layout
         GridPane grid = new GridPane();
+        grid.setAlignment(Pos.CENTER);
+        grid.setHgap(20);
+        grid.setVgap(50);
+        grid.setPadding(new Insets(25,25,25,25));
+        
+        //add controls to Grid
+        grid.add(btn,0,0);
+        grid.add(lbl,1,0);
+        grid.add(tf,2,0);
+        grid.add(rb,0,1);
+        grid.add(cb,1,1);
+        
         
                 
         
@@ -55,7 +70,7 @@ public class UILayout extends Application {
         //root.getChildren().add(cir);
         //root.getChildren().add(btn);
         
-        Scene scene = new Scene(root, 300, 250);
+        Scene scene = new Scene(grid, 300, 250);
         
         primaryStage.setTitle("User controls!");
         primaryStage.setScene(scene);
