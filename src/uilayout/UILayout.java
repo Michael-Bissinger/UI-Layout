@@ -45,9 +45,9 @@ public class UILayout extends Application {
         
         
         //Needed for Helbling File Renamer
-        FileChooser fc = new Filechooser();
-        fc.setTitle("Pick your file");
-        fc.showOpenDialog(primaryStage);
+        //FileChooser fc = new Filechooser();
+        //fc.setTitle("Pick your file");
+        //fc.showOpenDialog(primaryStage);
         
         
         //Pick Layout
