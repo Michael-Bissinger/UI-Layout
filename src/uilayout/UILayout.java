@@ -18,6 +18,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.effect.DropShadow;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Paint;
@@ -56,9 +58,16 @@ public class UILayout extends Application {
         Label lblComment = new Label("Enter your comment: ");
         TextField comment = new TextField();
         
+        
         //add Submit and clear Button
         Button submit = new Button("Submit");
         Button clear = new Button("Clear!");
+        
+        DropShadow shadow = new DropShadow();
+        submit.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
+        submit.setEffect(shadow);
+        System.out.println("Mouse hovered over the button!");
+    });
         
         Label lblResponse = new Label();
         
