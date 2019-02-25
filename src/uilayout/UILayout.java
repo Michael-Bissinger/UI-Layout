@@ -64,10 +64,16 @@ public class UILayout extends Application {
         Button clear = new Button("Clear!");
         
         DropShadow shadow = new DropShadow();
+        
         submit.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
         submit.setEffect(shadow);
         System.out.println("Mouse hovered over the button!");
     });
+        
+        submit.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
+            submit.setEffect(null);
+            System.out.println("Mouse gone!");
+        });
         
         Label lblResponse = new Label();
         
