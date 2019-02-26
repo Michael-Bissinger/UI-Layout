@@ -87,15 +87,23 @@ public class UILayout extends Application {
             clear.setEffect(null);
             System.out.println("Mouse gone!");
         });
+
+        Label lblResponse = new Label();
         
-        submit.setOnAction((ActionEvent e)->){
+        submit.setOnAction((ActionEvent e)->{
         
         if(comment.getText()!=null && !comment.getText().isEmpty())   //Did the user even enter a text?
+        {
+            lblResponse.setText(name.getText() + " " + "Thanks for your comment");
+        }
+        else
+        {
+            lblResponse.setText("You have not entered a comment!");
+        }
+    }
         
-    };
         
-        
-        Label lblResponse = new Label();
+
         
         root.add(title, 0, 0, 2, 1);
         root.add(hb, 0, 1);
