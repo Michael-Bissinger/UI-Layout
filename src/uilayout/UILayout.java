@@ -63,17 +63,37 @@ public class UILayout extends Application {
         Button submit = new Button("Submit");
         Button clear = new Button("Clear!");
         
+        
+        // Event Handler DropShadow for submit and clear
         DropShadow shadow = new DropShadow();
         
         submit.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
         submit.setEffect(shadow);
         System.out.println("Mouse hovered over the button!");
-    });
+        });
+        
+        clear.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
+        clear.setEffect(shadow);
+        System.out.println("Mouse hovered over the button!");
+        });
         
         submit.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
             submit.setEffect(null);
             System.out.println("Mouse gone!");
         });
+        
+        
+        clear.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
+            clear.setEffect(null);
+            System.out.println("Mouse gone!");
+        });
+        
+        submit.setOnAction((ActionEvent e)->){
+        
+        if(comment.getText()!=null && !comment.getText().isEmpty())   //Did the user even enter a text?
+        
+    };
+        
         
         Label lblResponse = new Label();
         
@@ -82,6 +102,7 @@ public class UILayout extends Application {
         root.add(lblComment, 0, 2);
         root.add(comment,0,3);
         root.add(submit,0,4);
+        root.add(clear,1,3);
         root.add(lblResponse,0,6,2,1);
         
         //
