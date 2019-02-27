@@ -46,14 +46,14 @@ public class UILayout extends Application {
         fileMenu.getItems().addAll(newMenuItem, saveMenuItem, printMenuItem, new SeparatorMenuItem(), exitMenuItem);
         
         Menu languageMenu = new Menu("Language");
-        CheckMenuItem javaMenuItem = new CheckMenuItem("Java");
+        CheckMenuItem javaMenuItem = new CheckMenuItem("Java"); // CheckMenuItem creates a checkable menu
         CheckMenuItem pythonMenuItem = new CheckMenuItem("Python");
         CheckMenuItem htmlMenuItem = new CheckMenuItem("HTML");
-                languageMenu.getItems().addAll(javaMenuItem, pythonMenuItem, htmlMenuItem);
+                languageMenu.getItems().addAll(javaMenuItem, pythonMenuItem, htmlMenuItem); // Adding items to menu
         
         CheckMenuItem FXMenuItem = new CheckMenuItem("JavaFX");
         FXMenuItem.setSelected(true);
-                languageMenu.getItems().addAll(new SeparatorMenuItem(),FXMenuItem);
+                languageMenu.getItems().addAll(new SeparatorMenuItem(),FXMenuItem); // Adding Items to menu
         
         Menu tutorialMenu = new Menu("Tutorial");
         tutorialMenu.getItems().addAll(
