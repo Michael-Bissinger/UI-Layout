@@ -6,7 +6,9 @@
 package uilayout;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.scene.Scene;
+import javafx.scene.control.CheckMenuItem;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
@@ -49,7 +51,8 @@ public class UILayout extends Application {
         CheckMenuItem htmlMenuItem = new CheckMenuItem("HTML");
                 languageMenu.getItems().addAll(javaMenuItem, pythonMenuItem, htmlMenuItem);
         
-        MenuItem FXMenuItem = new MenuItem("JavaFX");
+        CheckMenuItem FXMenuItem = new CheckMenuItem("JavaFX");
+        FXMenuItem.setSelected(true);
                 languageMenu.getItems().addAll(new SeparatorMenuItem(),FXMenuItem);
         
         Menu tutorialMenu = new Menu("Tutorial");
@@ -57,7 +60,12 @@ public class UILayout extends Application {
             new MenuItem("Buttons"),
             new MenuItem("Menus"),
             new MenuItem("Images"));
+    
+        languageMenu.getItems().add(tutorialMenu);
         
+        exitMenuItem.setOnAction(actionEvent->Platform.exit());
+        
+        menuBar.getMenus().addAll(fileMenu, languageMenu);
         
         primaryStage.setTitle("Menu!");
         primaryStage.setScene(scene);
