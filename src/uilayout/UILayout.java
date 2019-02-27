@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.SeparatorMenuItem;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -36,7 +37,27 @@ public class UILayout extends Application {
         Menu fileMenu = new Menu();
         MenuItem newMenuItem = new MenuItem("New");
         MenuItem saveMenuItem = new MenuItem("Save");
+        MenuItem printMenuItem = new MenuItem("print");
         MenuItem exitMenuItem = new MenuItem("Exit");
+        
+        //add the new menuitems to the filemenu
+        fileMenu.getItems().addAll(newMenuItem, saveMenuItem, printMenuItem, new SeparatorMenuItem(), exitMenuItem);
+        
+        Menu languageMenu = new Menu("Language");
+        CheckMenuItem javaMenuItem = new CheckMenuItem("Java");
+        CheckMenuItem pythonMenuItem = new CheckMenuItem("Python");
+        CheckMenuItem htmlMenuItem = new CheckMenuItem("HTML");
+                languageMenu.getItems().addAll(javaMenuItem, pythonMenuItem, htmlMenuItem);
+        
+        MenuItem FXMenuItem = new MenuItem("JavaFX");
+                languageMenu.getItems().addAll(new SeparatorMenuItem(),FXMenuItem);
+        
+        Menu tutorialMenu = new Menu("Tutorial");
+        tutorialMenu.getItems().addAll(
+            new MenuItem("Buttons"),
+            new MenuItem("Menus"),
+            new MenuItem("Images"));
+        
         
         primaryStage.setTitle("Menu!");
         primaryStage.setScene(scene);
