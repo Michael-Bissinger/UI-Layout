@@ -32,89 +32,13 @@ public class UILayout extends Application {
         
  
         
-        GridPane root = new GridPane();
+        BorderPane root = new Border();
         root.setPadding(new Insets(15,15,15,15));
         root.setHgap(10);
         root.setVgap(10);
-        
-        //Add title to the page
-        Text title = new Text("Leave a Comment!");
-        title.setFill(Paint.valueOf("red"));
-        
-        //UI controls
-        Label name = new Label("Enter your name: ");
-        TextField userName = new TextField();
-        HBox hb = new HBox();
-        hb.getChildren().addAll(name, userName);
-        //hb.getSpacing(25);
-        
-        //add Label and  Textfield
-        Label lblComment = new Label("Enter your comment: ");
-        TextField comment = new TextField();
-        
-        
-        //add Submit and clear Button
-        Button submit = new Button("Submit");
-        Button clear = new Button("Clear!");
-        
-        
-        // Event Handler DropShadow for submit and clear
-        DropShadow shadow = new DropShadow();
-        
-        submit.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
-        submit.setEffect(shadow);
-        System.out.println("Mouse hovered over the button!");
-        });
-        
-        clear.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
-        clear.setEffect(shadow);
-        System.out.println("Mouse hovered over the button!");
-        });
-        
-        submit.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
-            submit.setEffect(null);
-            System.out.println("Mouse gone!");
-        });
-        
-        
-        clear.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
-            clear.setEffect(null);
-            System.out.println("Mouse gone!");
-        });
 
-        Label lblResponse = new Label();
-        
-        submit.setOnAction((ActionEvent e)->{
-        
-        if(comment.getText()!=null && !comment.getText().isEmpty())   //Did the user even enter a text?
-        {
-            lblResponse.setText(userName.getText() + " " + "Thanks for your comment");
-        }
-        else
-        {
-            lblResponse.setText("You have not entered a comment!");
-        }
-    });
-        
-        clear.setOnAction((ActionEvent e)->{
-        userName.clear();
-        comment.clear();
-        lblResponse.setText(null);
-        
 
-    });
-        
 
-        
-        root.add(title, 0, 0, 2, 1);
-        root.add(hb, 0, 1);
-        root.add(lblComment, 0, 2);
-        root.add(comment,0,3);
-        root.add(submit,0,4);
-        root.add(clear,1,3);
-        root.add(lblResponse,0,6,2,1);
-        
-        //
         
         
 
@@ -123,7 +47,6 @@ public class UILayout extends Application {
         //root.getChildren().add(btn);
         
         Scene scene = new Scene(root, 500, 400);
-        scene.getStylesheets().add("uilayout/controlStyles.css");
         
         primaryStage.setTitle("UI control event handler!");
         primaryStage.setScene(scene);
