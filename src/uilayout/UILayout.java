@@ -6,19 +6,12 @@
 package uilayout;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.geometry.Insets;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.effect.DropShadow;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.paint.Paint;
-import javafx.scene.text.Text;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 /**
@@ -32,23 +25,20 @@ public class UILayout extends Application {
         
  
         
-        BorderPane root = new Border();
-        root.setPadding(new Insets(15,15,15,15));
-        root.setHgap(10);
-        root.setVgap(10);
-
-
-
+        BorderPane root = new BorderPane();        
+        Scene scene = new Scene(root, 400, 400, Color.WHITE);
         
+        MenuBar menuBar = new MenuBar();
+        menuBar.prefWidthProperty().bind(primaryStage.widthProperty());
+        root.setTop(menuBar);
         
-
+        //File menu - new save print exit
+        Menu fileMenu = new Menu();
+        MenuItem newMenuItem = new MenuItem("New");
+        MenuItem saveMenuItem = new MenuItem("Save");
+        MenuItem exitMenuItem = new MenuItem("Exit");
         
-        //root.getChildren().add(cir);
-        //root.getChildren().add(btn);
-        
-        Scene scene = new Scene(root, 500, 400);
-        
-        primaryStage.setTitle("UI control event handler!");
+        primaryStage.setTitle("Menu!");
         primaryStage.setScene(scene);
         primaryStage.show();
 
