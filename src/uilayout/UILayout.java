@@ -6,18 +6,21 @@
 package uilayout;
 
 import javafx.application.Application;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.MultipleSelectionModel;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javax.swing.event.ChangeListener;
 
 /**
  *
@@ -46,6 +49,17 @@ public class UILayout extends Application {
         
         lvColleges = new ListView<String>(colleges);
         lvColleges.setPrefSize(300, 150);
+        
+        MultipleSelectionModel<String> lvSelModel =
+                lvColleges.getSelectionModel();
+        lvSelModel.selectedItemProperty().addListener(new ChangeListener<String>() {
+            public void changed(ObservableValue<? extends String> changed, String old Val, String newVal)
+            {
+                response.setText("You selected " + newVal);
+            }
+            
+        });
+        
         
         root.getChildren().add(title);
         root.getChildren().add(lvColleges);
