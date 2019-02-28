@@ -52,8 +52,9 @@ public class UILayout extends Application {
         
         MultipleSelectionModel<String> lvSelModel =
                 lvColleges.getSelectionModel();
-        lvSelModel.selectedItemProperty().addListener(new ChangeListener<String>() {
-            public void changed(ObservableValue<? extends String> changed, String old Val, String newVal)
+        lvSelModel.selectedItemProperty().
+                addListener(new ChangeListener<String>() {
+            public void changed(ObservableValue<? extends String> changed, String oldVal, String newVal)
             {
                 response.setText("You selected " + newVal);
             }
