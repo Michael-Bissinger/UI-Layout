@@ -6,15 +6,17 @@
 package uilayout;
 
 import javafx.application.Application;
-import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.CheckMenuItem;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.SeparatorMenuItem;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.control.Label;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
@@ -25,14 +27,29 @@ public class UILayout extends Application {
     
     @Override
     public void start(Stage primaryStage) {
-        
+        Label response = new Label("Select a college or university:");
+       
+       
+        Text title = new Text("PA Colleges and Universities");
+        title.setFill(Paint.valueOf("red"));
+        title.setFont(Font.font("Verdana", FontWeight.BOLD, 20));
+       
+       
  
         
-        BorderPane root = new BorderPane();        
+        FlowPane root = new FlowPane(10,10);
+        root.setAlignment(Pos.CENTER);
+        
+        ObservableList<String> colleges =
+                FXCollections.observableArrayList("a", "b", "c", "d", "e", "f", "g");
+        
+        root.getChildren().add(title);
+        root.getChildren().add(response);
+        
         Scene scene = new Scene(root, 400, 400, Color.WHITE);
         
        
-        primaryStage.setTitle("Menu!");
+        primaryStage.setTitle("Observable List!");
         primaryStage.setScene(scene);
         primaryStage.show();
 
