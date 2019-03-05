@@ -7,6 +7,7 @@ package uilayout;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
@@ -25,7 +26,10 @@ public class UILayout extends Application {
     @Override
     public void start(Stage primaryStage) {
        
-
+        
+        Button btn = new Button();
+        
+        
         BorderPane pane = new BorderPane();
         Text title = new Text("California");
         title.setFont(Font.font("Verdana", FontWeight.BOLD, 24));
@@ -36,6 +40,7 @@ public class UILayout extends Application {
         
         pane.setTop(title);
         pane.setCenter(ivPic);
+        pane.setBottom(btn);
         
         Scene scene = new Scene(pane, 350, 400);
         
