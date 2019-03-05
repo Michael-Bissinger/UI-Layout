@@ -8,6 +8,7 @@ package uilayout;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -31,11 +32,15 @@ public class UILayout extends Application {
         title.setFill(Color.GREEN);
         
         Image caPic = new Image("uilayout/Desert-to-sea logo.gif");
+        ImageView ivPic = new ImageView(caPic);
         
-        Scene scene = new Scene(root, 350, 300);
+        pane.setTop(title);
+        pane.setCenter(ivPic);
+        
+        Scene scene = new Scene(pane, 350, 400);
         
        
-        primaryStage.setTitle("TableView!");
+        primaryStage.setTitle("California!");
         primaryStage.setScene(scene);
         primaryStage.show();
 
