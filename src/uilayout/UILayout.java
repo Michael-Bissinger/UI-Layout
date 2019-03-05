@@ -7,7 +7,11 @@ package uilayout;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.layout.GridPane;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
@@ -19,9 +23,12 @@ public class UILayout extends Application {
     @Override
     public void start(Stage primaryStage) {
        
-        GridPane root = new GridPane();
+
+        BorderPane pane = new BorderPane();
+        Text title = new Text("California");
+        title.setFont(Font.font("Verdana", FontWeight.BOLD, 24));
+        title.setFill(Color.GREEN);
         
-       
         
         Scene scene = new Scene(root, 350, 300);
         
