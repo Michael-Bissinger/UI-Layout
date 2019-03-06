@@ -25,22 +25,7 @@ public class UILayout extends Application {
     
     @Override
     public void start(Stage primaryStage) {
-       
-        
-        Button btn = new Button();
-        
-        
-        BorderPane pane = new BorderPane();
-        Text title = new Text("California");
-        title.setFont(Font.font("Verdana", FontWeight.BOLD, 24));
-        title.setFill(Color.GREEN);
-        
-        Image caPic = new Image("uilayout/Desert-to-sea logo.gif");
-        ImageView ivPic = new ImageView(caPic);
-        
-        pane.setTop(title);
-        pane.setCenter(ivPic);
-        pane.setBottom(btn);
+      
         
         Scene scene = new Scene(pane, 350, 400);
         
