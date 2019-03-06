@@ -7,8 +7,11 @@ package uilayout;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.transform.Rotate;
 import javafx.stage.Stage;
 
@@ -36,8 +39,13 @@ public class UILayout extends Application {
           rotate.setPivotX(btnRotate.getHeight()/2);
           rotate.setPivotY(btnRotate.getHeight()/2);
           
+          
         });
         
+        FlowPane root = new FlowPane();
+        root.setAlignment(Pos.CENTER);
+        root.setPadding(new Insets(25,25,25,25));
+        root.getChildren().add(btnRotate);
        
         primaryStage.setTitle("California!");
         primaryStage.setScene(scene);
