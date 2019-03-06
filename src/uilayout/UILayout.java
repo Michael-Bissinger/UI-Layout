@@ -6,6 +6,7 @@
 package uilayout;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.transform.Rotate;
@@ -16,6 +17,7 @@ import javafx.stage.Stage;
  * @author Michael
  */
 public class UILayout extends Application {
+    double angle=0.0;
     
     @Override
     public void start(Stage primaryStage) {
@@ -27,6 +29,14 @@ public class UILayout extends Application {
         
         
         Scene scene = new Scene(root, 350, 400);
+        
+        btnRotate.setOnAction((ActionEvent e)-> {
+          angle += 15;
+          rotate.setAngle(angle);
+          rotate.setPivotX(btnRotate.getHeight()/2);
+          rotate.setPivotY(btnRotate.getHeight()/2);
+          
+        });
         
        
         primaryStage.setTitle("California!");
