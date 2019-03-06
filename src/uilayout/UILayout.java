@@ -8,13 +8,7 @@ package uilayout;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
-import javafx.scene.text.Text;
+import javafx.scene.transform.Rotate;
 import javafx.stage.Stage;
 
 /**
@@ -25,9 +19,14 @@ public class UILayout extends Application {
     
     @Override
     public void start(Stage primaryStage) {
-      
         
-        Scene scene = new Scene(pane, 350, 400);
+        
+        Rotate rotate = new Rotate();
+        Button btnRotate = new Button("Click to Rotate");
+        btnRotate.getTransforms().add(rotate);
+        
+        
+        Scene scene = new Scene(root, 350, 400);
         
        
         primaryStage.setTitle("California!");
