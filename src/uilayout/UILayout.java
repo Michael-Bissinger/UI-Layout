@@ -31,7 +31,7 @@ public class UILayout extends Application {
         btnRotate.getTransforms().add(rotate);
         
         
-        Scene scene = new Scene(root, 350, 400);
+       
         
         btnRotate.setOnAction((ActionEvent e)-> {
           angle += 15;
@@ -47,7 +47,9 @@ public class UILayout extends Application {
         root.setPadding(new Insets(25,25,25,25));
         root.getChildren().add(btnRotate);
        
-        primaryStage.setTitle("California!");
+         Scene scene = new Scene(root, 350, 400);
+        
+        primaryStage.setTitle("Animate Button!");
         primaryStage.setScene(scene);
         primaryStage.show();
 
