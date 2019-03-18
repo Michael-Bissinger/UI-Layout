@@ -30,7 +30,7 @@ public class UILayout extends Application {
                         new PieChart.Data("Entertainment", 200),
                         new PieChart.Data("Cell Phone", 80));
         
-        PieChart budget = new PieChart(PieData);
+        PieChart budget = new PieChart(pieData);
         budget.setTitle("Monthy expenses");
         
         FlowPane root = new FlowPane();
