@@ -7,13 +7,9 @@ package uilayout;
 
 import javafx.application.Application;
 import javafx.collections.FXCollections;
-import javafx.event.ActionEvent;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
+import javafx.collections.ObservableList;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.transform.Rotate;
+import javafx.scene.chart.PieChart;
 import javafx.stage.Stage;
 
 /**
@@ -32,6 +28,11 @@ public class UILayout extends Application {
                         new PieChart.Data("Groceries", 235),
                         new PieChart.Data("Entertainment", 200),
                         new PieChart.Data("Cell Phone", 80));
+        
+        PieChart budget = new PieChart(PieData);
+        budget.setTitle("Monthy expenses");
+        
+        
         
         Scene scene = new Scene(root, 350, 400);
         
