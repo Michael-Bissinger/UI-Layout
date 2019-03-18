@@ -24,32 +24,10 @@ public class UILayout extends Application {
     
     @Override
     public void start(Stage primaryStage) {
-        
-        
-        Rotate rotate = new Rotate();
-        Button btnRotate = new Button("Click to Rotate");
-        btnRotate.getTransforms().add(rotate);
-        
-        
        
+        Scene scene = new Scene(root, 350, 400);
         
-        btnRotate.setOnAction((ActionEvent e)-> {
-          angle += 15;
-          rotate.setAngle(angle);
-          rotate.setPivotX(btnRotate.getHeight()/2);
-          rotate.setPivotY(btnRotate.getHeight()/2);
-          
-          
-        });
-        
-        FlowPane root = new FlowPane();
-        root.setAlignment(Pos.CENTER);
-        root.setPadding(new Insets(25,25,25,25));
-        root.getChildren().add(btnRotate);
-       
-         Scene scene = new Scene(root, 350, 400);
-        
-        primaryStage.setTitle("Animate Button!");
+        primaryStage.setTitle("Monthly Budget!");
         primaryStage.setScene(scene);
         primaryStage.show();
 
