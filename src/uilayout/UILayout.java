@@ -6,6 +6,7 @@
 package uilayout;
 
 import javafx.application.Application;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -20,11 +21,18 @@ import javafx.stage.Stage;
  * @author Michael
  */
 public class UILayout extends Application {
-    double angle=0.0;
     
     @Override
     public void start(Stage primaryStage) {
-       
+
+        ObservableList<PieChart.Data> pieData =
+                FXCollections.observableArrayList(
+                new PieChart.Data("Rent", 500),
+                        new PieChart.Data("Electric",125),
+                        new PieChart.Data("Groceries", 235),
+                        new PieChart.Data("Entertainment", 200),
+                        new PieChart.Data("Cell Phone", 80));
+        
         Scene scene = new Scene(root, 350, 400);
         
         primaryStage.setTitle("Monthly Budget!");
