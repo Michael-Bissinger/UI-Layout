@@ -10,6 +10,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Scene;
 import javafx.scene.chart.PieChart;
+import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
 
 /**
@@ -32,9 +33,10 @@ public class UILayout extends Application {
         PieChart budget = new PieChart(PieData);
         budget.setTitle("Monthy expenses");
         
+        FlowPane root = new FlowPane();
+        root.getChildren().add(budget);
         
-        
-        Scene scene = new Scene(root, 350, 400);
+        Scene scene = new Scene(root, 500, 500);
         
         primaryStage.setTitle("Monthly Budget!");
         primaryStage.setScene(scene);
