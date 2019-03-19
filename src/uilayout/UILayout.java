@@ -21,7 +21,8 @@ public class UILayout extends Application {
     
     @Override
     public void start(Stage primaryStage) {
- 
+        
+        setUserAgentStylesheet(STYLESHEET_CASPIAN);
                 ObservableList<PieChart.Data> pieData =
                 FXCollections.observableArrayList(
                 new PieChart.Data("Rent", 500),
