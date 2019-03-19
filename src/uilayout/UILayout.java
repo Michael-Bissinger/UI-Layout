@@ -24,7 +24,7 @@ public class UILayout extends Application {
         
         Scene scene = new Scene(root, 500, 500);
         
-        primaryStage.setTitle("Monthly Budget!");
+        primaryStage.setTitle("Apply CSS!");
         primaryStage.setScene(scene);
         primaryStage.show();
 
