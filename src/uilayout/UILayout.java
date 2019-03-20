@@ -41,8 +41,11 @@ public class UILayout extends Application {
         
         
         FlowPane root = new FlowPane();
+        root.getChildren().add(btn);
+        root.getChildren().add(lblOutput);
         
         Scene scene = new Scene(root, 500, 500);
+  
         
         primaryStage.setTitle("Apply CSS!");
         primaryStage.setScene(scene);
