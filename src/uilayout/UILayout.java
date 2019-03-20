@@ -24,9 +24,8 @@ public class UILayout extends Application {
     
     @Override
     public void start(Stage primaryStage) {
-        
-        Label lblOutput;
-        lblOutput = new Label(null);
+        Label lbl = new Label("Press the button to see a message");
+        Label lblOutput = new Label(null);
         
         Button btn = new Button();
         btn.setText("Say 'Hello World'");
@@ -49,9 +48,11 @@ public class UILayout extends Application {
         root.setOrientation(Orientation.VERTICAL);
         root.getChildren().add(btn);
         root.getChildren().add(lblOutput);
+        root.getChildren().add(lbl);
         
         Scene scene = new Scene(root, 500, 500);
-  
+        
+        scene.getStylesheets().add("UILayout/textStyles.css");
         
         primaryStage.setTitle("Apply CSS!");
         primaryStage.setScene(scene);
