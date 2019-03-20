@@ -8,6 +8,8 @@ package uilayout;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Orientation;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -41,6 +43,10 @@ public class UILayout extends Application {
         
         
         FlowPane root = new FlowPane();
+        root.setAlignment(Pos.CENTER);
+        root.setVgap(10);
+        root.setHgap(10);
+        root.setOrientation(Orientation.VERTICAL);
         root.getChildren().add(btn);
         root.getChildren().add(lblOutput);
         
