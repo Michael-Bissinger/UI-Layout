@@ -6,6 +6,8 @@
 package uilayout;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -26,6 +28,15 @@ public class UILayout extends Application {
         
         Button btn = new Button();
         btn.setText("Say 'Hello World'");
+        btn.setOnAction(new EventHandler<ActionEvent>() {
+            
+            @Override
+            public void handle(ActionEvent event) {
+                lblOutput.setText("Hello World!");
+            }
+        });
+        
+        
         
         
         
